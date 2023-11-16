@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "52356e99-7489-42f1-a858-388cd0702ef3",
+		"name": "Requests to GoalsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31002764",
+		"_collection_link": "https://sequin13s-collection-395925.postman.co/workspace/Jakub-Czekajski-Collections-Wor~62c850cf-21a4-4071-8d1c-7ffdceed88a8/collection/31002764-52356e99-7489-42f1-a858-388cd0702ef3?action=share&source=collection_link&creator=31002764"
+	},
+	"item": [
+		{
+			"name": "Get Goals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/goals",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"goals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get goal by username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/Bob/goals",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"Bob",
+						"goals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Progress inserting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/goals/2/progress?progress=0.8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"goals",
+						"2",
+						"progress"
+					],
+					"query": [
+						{
+							"key": "progress",
+							"value": "0.8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete goal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<div style=\"text-align: center;\">\r",
+							"    <h2>Error</h2>\r",
+							"    <p>{{response.detail.[0].msg}}</p>\r",
+							"</div>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()};\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/goals/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"goals",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Goal updates",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"title\": \"Learn how to use API\",\r\n  \"due_date\": \"30.11.2023\",\r\n  \"frequency\": [\r\n    1\r\n  ],\r\n  \"progress\": 0.7,\r\n  \"archived\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/goals/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"goals",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
