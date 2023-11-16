@@ -14,10 +14,10 @@ Requests to TheCatAPI:
 
   1. GET - Getting a photo of cats by ID - displaying a photo of the cat, using ID of image
   2. GET - Filters photos of cats - filtration photos of the cats, using:
-    - size - resolution of the photo
-    - mime_types - extension of the photo (.jpg, .gif, .png, etc.)
-    - order - order of displayed results
-    - limit - numer of displayed results
-  3. POST - Posting photos to favourites - saving photos to favourites section
-  4. DELETE - Deleting photos from favourites - removing photos from favourites section
-  5. POST - Posting votes of photos - adding number of votes to given photo
+     - size - resolution of the photo
+     - mime_types - extension of the photo (.jpg, .gif, .png, etc.)
+     - order - order of displayed results
+     - limit - numer of displayed results
+  4. POST - Posting photos to favourites - saving photos to favourites section
+  5. DELETE - Deleting photos from favourites - removing photos from favourites section
+  6. POST - Posting votes of photos - adding number of votes to given photo
